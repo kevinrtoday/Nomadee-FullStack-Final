@@ -5,7 +5,6 @@ import CardContent from "@material-ui/core/CardContent";
 import { Avatar, IconButton, makeStyles, Typography } from "@material-ui/core";
 import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 import { blue, green, yellow } from "@material-ui/core/colors";
-import { typography } from "@material-ui/system";
 
 const useStyles = makeStyles({
   avatar: {

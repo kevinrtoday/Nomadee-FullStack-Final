@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Events from "./pages/Events";
 import Create from "./pages/Create";
+import Edit from "./pages/Edit";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
 import Layout from "./components/Layout";
@@ -23,20 +24,23 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
         <Layout>
           <Switch>
             <Route exact path="/">
               <Events />
             </Route>
-            <Route path="/create">
+            <Route exact path="/create">
               <Create />
+            </Route>
+            <Route exact path="/editEvent/:id">
+              <Edit />
             </Route>
           </Switch>
         </Layout>
-      </Router>
-    </ThemeProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

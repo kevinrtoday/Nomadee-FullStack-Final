@@ -63,7 +63,7 @@ export default function Create() {
     }
 
     if (title && details && city && location && date) {
-      fetch("http://localhost:3000/events", {
+      fetch("http://localhost:8000/events", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ title, city, date, location, details, host }),
